@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var cd: Timer = $cd
 @onready var ttm: Timer = $ttm
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var direction
 
@@ -31,7 +32,11 @@ func _physics_process(delta: float) -> void:
 		direction = Input.get_axis("a", "d")
 		velocity.x += direction * DASH_SPEED
 		dash_extra()
-	
+		if direction == -1:
+			animated_sprite_2d.play("dash_left")
+		else:
+			animated_sprite_2d.play("dash_right")
+		
 	print(ttm.time_left,velocity)
 	move_and_slide()
 

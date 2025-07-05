@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://dcip13g4r270j"]
+[gd_scene load_steps=6 format=4 uid="uid://dcip13g4r270j"]
 
 [ext_resource type="Texture2D" uid="uid://c7oilpgytlvi2" path="res://assets/Tilemap/tilemap.png" id="1_jjn5x"]
 [ext_resource type="PackedScene" uid="uid://c4pr1hkt2jnyp" path="res://scenes/character/character.tscn" id="2_sxg3d"]
+[ext_resource type="PackedScene" uid="uid://bgdaht6qm8cw1" path="res://scenes/cloud/cloud.tscn" id="3_jff7r"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxg3d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftf55"]
 texture = ExtResource("1_jjn5x")
 separation = Vector2i(1, 1)
 texture_region_size = Vector2i(18, 18)
@@ -247,7 +248,7 @@ texture_region_size = Vector2i(18, 18)
 
 [sub_resource type="TileSet" id="TileSet_jff7r"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_sxg3d")
+sources/0 = SubResource("TileSetAtlasSource_ftf55")
 
 [node name="Game" type="Node2D"]
 
@@ -257,3 +258,12 @@ tile_set = SubResource("TileSet_jff7r")
 
 [node name="character" parent="." instance=ExtResource("2_sxg3d")]
 position = Vector2(-1, -49)
+
+[node name="Camera2D2" type="Camera2D" parent="character"]
+zoom = Vector2(3.195, 3.195)
+limit_bottom = 50
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="AnimatableBody2D" parent="." instance=ExtResource("3_jff7r")]
+position = Vector2(192, -56)

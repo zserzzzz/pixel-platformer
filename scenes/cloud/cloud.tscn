@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgdaht6qm8cw1"]
+
+[ext_resource type="Texture2D" uid="uid://ciqdofwatd8fn" path="res://assets/Tiles/cloud.png" id="1_onnjq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcile"]
+size = Vector2(63, 11)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2.5)
+shape = SubResource("RectangleShape2D_jcile")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_onnjq")

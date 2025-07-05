@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4pr1hkt2jnyp"]
+[gd_scene load_steps=16 format=3 uid="uid://c4pr1hkt2jnyp"]
 
-[ext_resource type="Script" uid="uid://dplebisac4twp" path="res://scripts/character_body_2d.gd" id="1_0rlhq"]
+[ext_resource type="Script" uid="uid://dplebisac4twp" path="res://scenes/character/scripts/character_body_2d.gd" id="1_0rlhq"]
 [ext_resource type="Texture2D" uid="uid://ckdwyske7amca" path="res://assets/Tiles/Characters/tile_0006.png" id="2_oe6dy"]
 [ext_resource type="Texture2D" uid="uid://cbtjtoqpdo1cu" path="res://assets/Tiles/Characters/tile_0007.png" id="3_cuvpk"]
+[ext_resource type="Texture2D" uid="uid://ewrhxnbtopol" path="res://assets/Tiles/Characters/pixil-frame-0.png" id="4_cuvpk"]
 [ext_resource type="Texture2D" uid="uid://bb5icov0vif4l" path="res://assets/Tiles/Characters/tile_0000.png" id="4_rvcjf"]
 [ext_resource type="Texture2D" uid="uid://bmdr22jdtfklv" path="res://assets/Tiles/Characters/tile_0001.png" id="5_1pheb"]
+[ext_resource type="Texture2D" uid="uid://caup6i2r6kcpp" path="res://assets/Tiles/Characters/pixil-frame-1.png" id="5_rvcjf"]
 [ext_resource type="Texture2D" uid="uid://cduq5gouu6ryd" path="res://assets/Tiles/Characters/tile_0002.png" id="6_h1xxs"]
 [ext_resource type="Texture2D" uid="uid://b1mg43ecdxqmg" path="res://assets/Tiles/Characters/tile_0003.png" id="7_maja8"]
 [ext_resource type="Texture2D" uid="uid://dd84m16a8h6vh" path="res://assets/Tiles/Characters/tile_0004.png" id="8_btfbg"]
@@ -23,6 +25,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"anim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cuvpk")
+}],
+"loop": true,
+"name": &"dash_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_rvcjf")
+}],
+"loop": true,
+"name": &"dash_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -78,14 +96,10 @@ script = ExtResource("1_0rlhq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dqlfo")
 autoplay = "default"
-frame_progress = 0.216139
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_0rlhq")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
 
 [node name="cd" type="Timer" parent="."]
 wait_time = 2.5
